@@ -33,7 +33,7 @@ sudo docker run -it --rm clientapp
 ```
 dotnet run <Local networkaddress ipv4>
 ```
-3) Navigate to client folder
+3) (In a new terminal/different machine) Navigate to client folder
 4) Build and run program using folllowing format
 ```
 dotnet run <Enter the local networkaddress you assinged to server in step 2>
