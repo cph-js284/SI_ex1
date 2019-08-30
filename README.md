@@ -38,3 +38,7 @@ dotnet run <Local networkaddress ipv4>
 ```
 dotnet run <Enter the local networkaddress you assinged to server in step 2>
 ```
+
+
+<b>NB. To connect docker-containers across different host you need docker-swarm or weave or similar. Alternativly run the apps outside the container</b>
+
