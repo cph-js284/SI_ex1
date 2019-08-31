@@ -1,7 +1,5 @@
 using System;
-using System.Linq;
 using System.Net;
-using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 
@@ -44,17 +42,12 @@ namespace server
                     
                     Socket handler = serverSocket.Accept();
                     System.Console.WriteLine("Connection established");
-                    
+
                     message="";
                     //reading
-                    while (true)
-                    {
-                        var NumberOfBytes = handler.Receive(buffer);
-                        message += Encoding.ASCII.GetString(buffer,0,NumberOfBytes);
-                        //end of data received.
-                        if(message.IndexOf("<##>") > -1)
-                            break;
-                    }
+                    var NumberOfBytes = handler.Receive(buffer);
+                    message += Encoding.ASCII.GetString(buffer,0,NumberOfBytes);
+                    
                     System.Console.WriteLine($"Data received: {message}");
                     //send reply to client
                     byte[] reply = null;
